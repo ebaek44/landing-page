@@ -119,12 +119,9 @@ input, select, textarea {
 			border-bottom-color: transparent;
 			color: #333333 !important;
 		}
-		a:focus,
 		a:focus-visible {
-			border-bottom-color: transparent;
-			color: #333333;
-			outline: 3px solid #5ed0b1;
-			outline-offset: 2px;
+			outline: 1px dotted rgba(0, 0, 0, 0.2);
+			outline-offset: 1px;
 		}
 
 	strong, b {
