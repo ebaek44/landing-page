@@ -1,7 +1,6 @@
 (() => {
   'use strict';
   const projects = window.PORTFOLIO_MEDIA?.projects || {};
-  const prefix = document.body.classList.contains('case-body') ? '../' : '';
   document.querySelectorAll('[data-project-image]').forEach(slot => {
     const project = projects[slot.dataset.projectImage];
     const path = project?.screenshot;
@@ -15,6 +14,6 @@
       slot.classList.add('has-screenshot');
     }, { once: true });
     // A missing image leaves the existing illustration intact.
-    image.src = prefix + path;
+    image.src = path;
   });
 })();

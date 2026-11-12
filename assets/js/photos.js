@@ -11,8 +11,8 @@ window.PORTFOLIO_MEDIA = {
   },
   headstarter: { photo: '', alt: '', position: '50% 50%' },
   projects: {
-    musicweb: { screenshot: '', alt: '', position: '50% 50%' },
-    'hands-on': { screenshot: '', alt: '', position: '50% 50%' },
+    musicweb: { screenshot: 'images/projects/musicweb-discovery.png', alt: 'musicweb. discovery interface showing Radiohead’s artist network and listening panel', position: '50% 0%' },
+    'hands-on': { screenshot: 'images/projects/hands-on-training-studio.png', alt: 'Hands On Training Studio detecting an open palm with hand landmarks beside the pose recording controls' },
     'clinical-trials': { screenshot: '', alt: '', position: '50% 50%' }
   }
 };

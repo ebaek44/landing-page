@@ -34,8 +34,8 @@
   if (logoSlot && logo) logo.addEventListener('load', () => logoSlot.replaceChildren(logo), { once: true });
 
   // A continuous arc: input adds momentum, while the page keeps its native scroll.
-  const wheel = document.querySelector('.photo-wheel');
-  const track = document.querySelector('#photo-track');
+  const wheel = document.querySelector('#outside:not([hidden]) .photo-wheel');
+  const track = wheel?.querySelector('#photo-track');
   const photos = media.photos?.length ? media.photos : Array.from({ length: 5 }, () => ({ placeholder: true }));
   const cards = [];
   if (track) photos.forEach((photo, index) => {
@@ -141,8 +141,8 @@
   window.addEventListener('pagehide', stopWheel);
 
   const rail = document.querySelector('.section-rail');
-  const links = [...(rail?.querySelectorAll('a') || [])];
-  const sections = [...document.querySelectorAll('main > section[id]')];
+  const links = [...(rail?.querySelectorAll('a:not([hidden])') || [])];
+  const sections = [...document.querySelectorAll('main > section[id]:not([hidden])')];
   let activeId;
   let scrollFrame = 0;
   let previousScrollY = window.scrollY;
