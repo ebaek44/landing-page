@@ -13,6 +13,6 @@ window.PORTFOLIO_MEDIA = {
   projects: {
     musicweb: { screenshot: 'images/projects/musicweb-discovery.png', alt: 'musicweb. discovery interface showing Radiohead’s artist network and listening panel', position: '50% 0%' },
     'hands-on': { screenshot: 'images/projects/hands-on-training-studio.png', alt: 'Hands On Training Studio detecting an open palm with hand landmarks beside the pose recording controls' },
-    'clinical-trials': { screenshot: '', alt: '', position: '50% 50%' }
+    'clinical-trials': { screenshot: 'images/projects/clinical-dashboard-home.png', alt: 'Clinical Trial Dashboard homepage with study data import controls for DM, DS, AE, and CM' }
   }
 };
