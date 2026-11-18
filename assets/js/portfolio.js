@@ -149,7 +149,11 @@
   function updateNavigation() {
     scrollFrame = 0;
     const threshold = innerHeight * .35;
-    const current = [...sections].reverse().find(section => section.getBoundingClientRect().top <= threshold) || sections[0];
+    const maxScroll = document.documentElement.scrollHeight - innerHeight;
+    const atBottom = maxScroll > 0 && window.scrollY >= maxScroll - 2;
+    const current = atBottom
+      ? sections.at(-1)
+      : [...sections].reverse().find(section => section.getBoundingClientRect().top <= threshold) || sections[0];
     if (!current || current.id === activeId) return;
     activeId = current.id;
     links.forEach(link => {

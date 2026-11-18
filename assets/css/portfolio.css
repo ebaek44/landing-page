@@ -163,6 +163,23 @@ summary > span:first-child { font-size: 18px; letter-spacing: -.4px; }
 .portrait-frame { padding: 8px; max-width: 290px; border-radius: 17px; background: var(--sand); transform: rotate(-3deg); }
 .portrait-frame img { width: 100%; height: 300px; border-radius: 11px; filter: saturate(.65); object-position: center 40%; }
 .about h2 { margin-bottom: 25px; }.about p { font-size: 14px; color: var(--muted); max-width: 470px; }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 23px;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 12px;
+}
+.social-links a:hover { background: var(--sand); color: var(--accent-ink); }
+.social-links svg { width: 13px; height: 13px; color: var(--accent-ink); }
 /* Continuous, floating photo strip. Wheel and touch input add decaying momentum. */
 .outside { overflow: hidden; position: relative; background: radial-gradient(ellipse at 45% 50%, #F2ECE4B3, transparent 70%); }
 .photo-wheel { height: 360px; margin-top: 30px; position: relative; perspective: 1200px; touch-action: pan-y; }
@@ -178,12 +195,8 @@ summary > span:first-child { font-size: 18px; letter-spacing: -.4px; }
 .placeholder-3 { background: #D8B18D; }.placeholder-3:before { background: #A07B62; }
 .placeholder-4 { background: #C7B8A8; }.placeholder-4:before { background: #837667; clip-path: polygon(0 100%,15% 5%,30% 100%,50% 0,70% 100%,85% 10%,100% 100%); }
 .photo-card figcaption { position: absolute; bottom: 10px; left: 13px; font-size: 10px; color: var(--muted); }
-.contact { padding-bottom: 75px; }.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 85px; }
-.social-links { display: flex; flex-wrap: wrap; gap: 23px; margin: 30px 0; font-size: 12px; }.social-links a:hover { color: var(--accent); }
-label { display: block; font-size: 11px; margin-bottom: 12px; }.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-input, textarea { display: block; width: 100%; border: 0; border-bottom: 1px solid #CFC3B5; border-radius: 0; background: transparent; padding: 0 0 12px; margin: 0 0 28px; color: var(--ink); font-size: 13px; line-height: 1.5; }textarea { resize: vertical; }
 .button { display: inline-flex; gap: 28px; align-items: center; justify-content: space-between; font-size: 11px; padding: 14px 21px; border: 1px solid transparent; border-radius: 8px; transition: transform .25s, background .25s; }
-.button:hover { transform: translateY(-2px); }.button svg { width: 16px; height: 16px; }.button-dark, .button-accent { background: var(--accent-solid); color: #FFFFFF; }.button-dark svg { color: #FFFFFF; }.button-dark:hover, .button-accent:hover { background: #9F3D22; }.button-outline { border-color: var(--line); }
+.button:hover { transform: translateY(-2px); }.button svg { width: 16px; height: 16px; }.button-accent { background: var(--accent-solid); color: #FFFFFF; }.button-dark svg { color: #FFFFFF; }.button-accent:hover { background: #9F3D22; }.button-outline { border-color: var(--line); }
 .site-footer { display: flex; justify-content: flex-end; padding: 20px 0 45px; color: var(--muted); font-size: 10px; }
 .reveal { opacity: 1; }.js-motion .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }.js-motion .reveal.visible { opacity: 1; transform: translateY(0); }
 /* Keep real app captures uncropped and large enough to show the interface. */
@@ -204,7 +217,7 @@ input, textarea { display: block; width: 100%; border: 0; border-bottom: 1px sol
   .project-grid .clinical-art .chart-grid { flex: 1; min-height: 0; }
 }
 @media (min-width: 1600px) { .hero { height: 740px; }.hero-copy { padding-top: 185px; }.hero-ripple { right: 18%; } }
-@media (max-width: 1100px) { .hero h1 { font-size: 95px; }.project-copy { padding: 28px; }.music-art { padding: 25px; }.about-layout { gap: 50px; }.aveva-copy { padding: 30px; }.contact-layout { gap: 50px; }.community-grid article { padding-inline: 23px; } }
+@media (max-width: 1100px) { .hero h1 { font-size: 95px; }.project-copy { padding: 28px; }.music-art { padding: 25px; }.about-layout { gap: 50px; }.aveva-copy { padding: 30px; }.community-grid article { padding-inline: 23px; } }
 @media (max-width: 800px) {
   :root { scroll-padding-top: 30px; }
   .wrap { width: calc(100% - 76px); margin-left: 20px; margin-right: 56px; }.section-pad { padding-block: 50px; }h2 { font-size: 30px; letter-spacing: -1px; }.section-heading { margin-bottom: 25px; }
@@ -222,7 +235,6 @@ input, textarea { display: block; width: 100%; border: 0; border-bottom: 1px sol
   .community { padding-top: 25px; }.community h2 { font-size: 23px; }.community-grid { grid-template-columns: 1fr; padding: 0 23px; }.community-grid article { padding: 23px 0; border-right: 0; border-bottom: 1px solid #1E222910; }.community-grid svg { float: right; margin: 0; height: 20px; width: 20px; }.community-grid h3 { font-size: 18px; }
   .about-layout { grid-template-columns: 1fr; gap: 30px; }.portrait-frame { width: 205px; }.portrait-frame img { height: 210px; }.about h2 { font-size: 28px; margin-bottom: 20px; }.about p { font-size: 13px; }
   .photo-wheel { height: 315px; margin-top: 20px; }.photo-card { width: 215px; height: 255px; transform: translateX(calc(-50% + var(--offset) * 229px)) translateY(calc(var(--depth) * 10px + var(--float, 0px))) rotate(calc(var(--offset) * 4deg)); }
-  .contact-layout { grid-template-columns: 1fr; gap: 30px; }.social-links { margin-block: 25px 0; gap: 20px; }.form-row { gap: 18px; }.contact-form label { font-size: 11px; }.contact-form input,.contact-form textarea { font-size: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   :root { scroll-behavior: auto; }*, *:before, *:after { animation: none!important; transition: none!important; }.js-motion .reveal { opacity: 1; transform: none; }.project { transform: none!important; }.hero-ripple span { opacity: .05; transform: scale(.6); }.hero-ripple span:nth-child(2) { transform: scale(.8); }.hero-ripple span:nth-child(3) { transform: scale(1); }.hero-ripple span:nth-child(4) { display: none; }
